@@ -32,9 +32,13 @@ def Kopie(intListe):
 
 L = [[1,2,3,4,5], [22,4,5], [1,5]]
 # print(intSuperliste(L))
-L = [[1,2,3,4,5], [22,4,5], [1,5]]
+A = [1,2]
+B = [3,2]
+C = [5,2,7,5]
+D = [1,3,2]
+L = [A, B, C, B]
 print("L:\n", L)
 l_copy = Kopie(L)
-L = [[3,4,2], [2,3,4,5], [2,3,6,3]]
-print("l_copy:\n", l_copy)
+L.append([1,2,3,4,5,6,7])
 print("L:\n", L)
+print("l_copy:\n", l_copy)
