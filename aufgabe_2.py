@@ -2,53 +2,45 @@
 # Arthur Flaum
 # Florian Ewald, 333 068 94
 def intSuperliste(suplist):
-    # if type(suplist) != list:
-    #     if type(suplist) == int:
-    #         return True
-    #     else:
-    #         return False
-    # else:
-    #     ini = True
-    #     for m in suplist:
-    #         isInt = intSuperliste(m)
-    #         if not(isInt):
-    #             return False
-    #         else:
-    #             ini = ini and isInt
-    #     return ini
     if type(suplist) == list:
         nol = 0 # number of lists
         noi = 0 # number of integer
         isIntlist = True
         for m in suplist:
-            nol += float(type(m) == list)
-            noi += float(type(m) == int)
+            # loop to check whether al list elements are lists resp. integers
+            nol += float(type(m) == list) # counts list elements
+            noi += float(type(m) == int) # counts int elements
 
         if nol == len(suplist):
+            # if all elements are lists
+            # use superlist to check if it is a superlist
             for n in suplist:
                 isIntlist = isIntlist and intSuperliste(n)
             return isIntlist
         elif noi == len(suplist):
             return True
         else:
+            # returns false if a list is given with mixed types e.g. integer and list elements
             return False
 
     else:
+        # return false if not a list is given
         return False
 
 def Kopie(intListe):
     if not(intSuperliste(intListe)):
+        # check if a superlist is given
         raise TypeError("Parameter is not an integer superlist! Programm terminates!")
         exit()
 
+    if type(intListe) != list:
+        # returns single numbers back
+        return intListe
     else:
-        if type(intListe) != list:
-            return intListe
-        else:
-            copy = []
-            for m in intListe:
-                copy.append(Kopie(m))
-            return copy
+        copy = []
+        for m in intListe:
+            copy.append(Kopie(m))
+        return copy
 
 L = [[1,2,3,4,5], [1], [22,4,5], [1,5]]
 L = [[1], [1,2], [1]]
