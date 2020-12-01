@@ -7,12 +7,12 @@ def IntegerTest(n_inp):
     except ValueError:
         print("Invalid Input!")
         print("Next time use an integer...")
-        return None
+        exit()
 
     if n <= 0:
         raise ValueError("That is a negative integer!")
-        print("Programm terminates!")
-        return None
+    print("Program terminates")
+        exit()
     return n
 
 """
@@ -63,28 +63,20 @@ def pyramid_seq(n, k):
 
 print(pyramid_seq(4,4))
 
-# n_inp = input("Please Enter an integer number for the hight of the pyramid:\n")
-# n = IntegerTest(n_inp)
-# if n == None:
-#     print("Program terminates")
-#     exit()
+n_inp = input("Please Enter an integer number for the hight of the pyramid:\n")
+n = IntegerTest(n_inp)
 
-# print("#"*15)
-# print(pyramid(n))
-# print("#"*15)
+print("#"*15)
+print(pyramid(n))
+print("#"*15)
 
 
-# n_inp = input("Please Enter an integer number for the hight of the pyramid:\n")
-# n = IntegerTest(n_inp)
-# if n == None:
-#     print("Program terminates")
-#     exit()
+n_inp = input("Please Enter an integer number for the hight of the pyramid:\n")
+n = IntegerTest(n_inp)
+k_inp = input("Please Enter an integer number for the number of times of the pyramid:\n")
+k = IntegerTest(k_inp)
 
-# k_inp = input("Please Enter an integer number for the number of times of the pyramid:\n")
-# if n == None:
-#     print("Program terminates")
-#     exit()
 
-# print("#"*15)
-# print(pyramid_seq(n,k))
-# print("#"*15)
+print("#"*15)
+print(pyramid_seq(n,k))
+print("#"*15)
