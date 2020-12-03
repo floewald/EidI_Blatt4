@@ -32,60 +32,20 @@ def pyramid_seq(n, k):
         pyra = [element1 + element2 for element1, element2 in zip(pyra1, pyra2)]
         return "\n".join(pyra)
 
+n_inp = input("Please Enter an integer number for the hight of the pyramid:\n")
+n = IntegerTest(n_inp)
 
-print(pyramid_seq(8,3))
-print(pyramid(8))
-# n_inp = input("Please Enter an integer number for the hight of the pyramid:\n")
-# n = IntegerTest(n_inp)
-
-# print("#"*15)
-# print(pyramid(n))
-# print("#"*15)
+print("#"*15)
+print(pyramid(n))
+print("#"*15)
 
 
-# n_inp = input("Please Enter an integer number for the hight of the pyramid:\n")
-# n = IntegerTest(n_inp)
-# k_inp = input("Please Enter an integer number for the number of times of the pyramid:\n")
-# k = IntegerTest(k_inp)
+n_inp = input("Please Enter an integer number for the hight of the pyramid:\n")
+n = IntegerTest(n_inp)
+k_inp = input("Please Enter an integer number for the number of times of the pyramid:\n")
+k = IntegerTest(k_inp)
 
 
-# print("#"*15)
-# print(pyramid_seq(n,k))
-# print("#"*15)
-
-
-"""
-recursive function but using a for loop for spacing
-"""
-# def pyramid(n):
-#     def addSpaces(pyra, n):
-#         if n == 2:
-#             return "o" + pyra + "o\n"
-#         else:
-#             spyra = ""
-#             for m in pyra.split("\n"):
-#                 if not(m == ""):
-#                     spyra += "o"+m+"o\n"
-#             return spyra
-
-#     if n == 1:
-#         return "*"
-#     else:
-#         return addSpaces(pyramid(n-1),n) + pyramid(1)*(2*n-1)
-    
-# def pyramid_seq(n, k):
-#     def insertSegment(pyra,k):
-#         ipyra = ""
-#         for m in pyra.split("\n"):
-#             ipyra += m*k + "\n"
-#         return ipyra
-#     return insertSegment(pyramid(n), k)
-    
-def pyramid(n):
-    def addSpaces(spyra):
-        return "o" + "o\no".join(spyra) + "o"
-
-    if n == 1:
-        return "*"
-    else:
-        return addSpaces(pyramid(n-1).split("\n")) + "\n" + pyramid(1)*(2*n-1)
+print("#"*15)
+print(pyramid_seq(n,k))
+print("#"*15)

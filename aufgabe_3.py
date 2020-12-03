@@ -24,29 +24,9 @@ def calcTreeHeight(h):
         return calcTreeHeight((h-11)/2)
     else:
         return h
-    # if ( h > 0 ) and (h <= 11):
-    #     return h
-    # elif h > 34:
-    #     h_r1 = h - 34
-    #     h_r2 = calcTreeHeight( (n-11)/2 )
-    #     if (h_r1 > 0) and (h_r2 > 0):
-    #         return float( h_r1 >= h_r2)*h_r1 + float( h_r1 < h_r2)*h_r2
-    #     if h_r2 > 11:
-    #         return calcTreeHeight( (h_r2 - 11)/2 )
-    # elif h > 11:
-    #     return  calcTreeHeight( (n-11)/2 )
-    # else:
-    #     return h
-        # h = float( (h - 34) <= ( (h - 11 )/ 2 ) )*(h - 34) + float( (h - 34) > ( (h - 11 )/ 2 ) )*( (h - 11 )/ 2 )
-        # h = float( (h - 34) <= ( (h - 11 )/ 2 ) )*(h - 34) + float( (h - 34) > ( (h - 11 )/ 2 ) )*( (h - 11 )/ 2 )
-        # if ( (h - 34) <= 0 ) and ( (h - 34) >= calcTreeHeight( (h - 11 )/ 2 ) ):
-        #     return calcTreeHeight((h - 11 )/ 2)
-        # else:
-        #     return calcTreeHeight(h-34)
 
-# n_inp = input("Please Enter an integer number for the hight of the pyramid:\n")
-# n = IntegerTest(n_inp)
-n = 32
+n_inp = input("Please Enter an integer number for the hight of the pyramid:\n")
+n = IntegerTest(n_inp)
 height = calcTreeHeight(n) 
 
 print("Smalles Tree height: \t {:.5}".format(height) )
