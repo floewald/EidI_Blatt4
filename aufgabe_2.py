@@ -40,7 +40,7 @@ def Kopie(intListe):
         copy = []
         for m in intListe:
             copy.append(Kopie(m))
-        return copy
+        return copy[:]
 
 L = [[1,2,3,4,5], [1], [22,4,5], [1,5]]
 L = [[1], [1,2], [1]]
