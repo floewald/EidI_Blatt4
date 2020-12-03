@@ -33,27 +33,35 @@ def Kopie(intListe):
         raise TypeError("Parameter is not an integer superlist! Programm terminates!")
         exit()
 
-    if type(intListe) != list:
-        # returns single numbers back
-        return intListe
-    else:
-        copy = []
-        for m in intListe:
+    # if type(intListe) != list:
+    #     # returns single numbers back
+    #     return intListe
+    # else:
+    #     copy = []
+    #     for m in intListe:
+    #         copy.append(Kopie(m))
+    #     return copy[:]
+    copy = []
+    for m in intListe:
+        if type(m) == int:
+            return intListe[:]
+        else:
             copy.append(Kopie(m))
-        return copy[:]
+    return copy[:]
+        
 
 L = [[1,2,3,4,5], [1], [22,4,5], [1,5]]
 L = [[1], [1,2], [1]]
 # L = [1]
 print(intSuperliste(L))
-# A = [1,2]
-# B = [3,2]
-# C = [5,2,7,5]
-# D = [1,3,2]
-# L = [A, B, C, B]
-# print("L:\n", L)
-# l_copy = Kopie(L)
-# B.append([2,3,4])
-# # L.append([1,2,3,4,5,6,7])
-# print("L:\n", L)
-# print("l_copy:\n", l_copy)
+A = [1,2]
+B = [3,2]
+C = [5,2,7,5]
+D = [1,3,2]
+L = [A, B, C, B]
+print("L:\n", L)
+l_copy = Kopie(L)
+B.append([2,3,4])
+L.append([1,2,3,4,5,6,7])
+print("L:\n", L)
+print("l_copy:\n", l_copy)
